@@ -25,13 +25,12 @@ public class BookController {
 
     @GetMapping("/{id}")
     public Book getById(@PathVariable Long id) {
-        return bookService.findById(id).orElseThrow(() ->
-                new IllegalStateException("Введите Id книги!"));
+        return bookService.findById(id);
     }
 
     @PostMapping
-    public Book save(@RequestBody Book book) {
-        return bookService.save(book);
+    public void save(@RequestBody Book book) {
+        bookService.save(book);
     }
 
     @DeleteMapping("/{id}")
