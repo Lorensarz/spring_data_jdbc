@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: spring_data_jdbc
+
+  datasource:
+    url: jdbc:postgresql://localhost:5435/library_db
+    username: user
+    password: pass
+
+  jpa:
+    hibernate:
+      ddl-auto: update
